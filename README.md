@@ -1,6 +1,11 @@
 # form-validator-js
 simple form validator js class
 
+features:
+- very simple
+- check input while typing with input event
+- depends on css animation with "show" class on error element
+
 Depends on jQuery
 from arrtibutes, add attribute to form element:
 - data-fv-form
