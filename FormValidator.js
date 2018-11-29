@@ -39,7 +39,7 @@ class FormValidator {
 	init(){
 			// init form
 			this.form=$('form[data-fv-form]');
-		
+			
 			this.form.submit((event)=>{
 				this.testedOnce=true;
 				
@@ -66,7 +66,7 @@ class FormValidator {
 				this.olist.push(o);
 
 			})
-	}
+		}
 
 	// check all fields on form submit
 	checkAllFields(){
@@ -90,21 +90,21 @@ class FormValidator {
 		var field=o.tagName+":"+o.type;
 		switch(field){
 			case "INPUT:text":
-				this.addInputListener(o);
-				if(this.is_field_empty(o)){return false;break;}
+			this.addInputListener(o);
+			if(this.is_field_empty(o)){return false;break;}
 			break;
 			case "INPUT:email":
-				this.addInputListener(o);
-				if(this.is_not_field_email(o)){return false;break;}
-				if(this.is_field_empty(o)){return false;break;}
+			this.addInputListener(o);
+			if(this.is_not_field_email(o)){return false;break;}
+			if(this.is_field_empty(o)){return false;break;}
 			break;
 			case "INPUT:password":
-				this.addInputListener(o);
-				if(this.is_field_empty(o)){return false;break;}
+			this.addInputListener(o);
+			if(this.is_field_empty(o)){return false;break;}
 			break;
 			case "TEXTAREA:text":
-				this.addInputListener(o);
-				if(this.is_field_empty(o)){return false;break;}
+			this.addInputListener(o);
+			if(this.is_field_empty(o)){return false;break;}
 			break;
 		}
 		
@@ -142,14 +142,14 @@ class FormValidator {
 		if(!this.testedOnce){return false;}
 
 		var val=$(o.element).val()
-        var regex = /(.+)@(.+){2,}\.(.+){2,}/;
-        var result=!regex.test(val);
-        if(result){
-        	$(o.errorOut).addClass('show')
-        	return result;
-        }
-        $(o.errorOut).removeClass('show')
-        return result;
+		var regex = /(.+)@(.+){2,}\.(.+){2,}/;
+		var result=!regex.test(val);
+		if(result){
+			$(o.errorOut).addClass('show')
+			return result;
+		}
+		$(o.errorOut).removeClass('show')
+		return result;
 	}
 
 
